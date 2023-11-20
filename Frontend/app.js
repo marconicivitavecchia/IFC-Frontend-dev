@@ -14,21 +14,20 @@ function myInit() {
     console.log("OK!");
     setInterval(myCall, 1000);  //chiama la funzione myCall ogni 1000ms
 }
-// Fetch the initial follower count from the server
+// Recupera il conteggio iniziale dei follower dal server
 fetch('http://localhost:3000/getFollowerCount')
 .then(response => {
-    // Check if the response status is ok (HTTP status code 200-299)
+    // Controlla se lo stato della risposta è ok (codice di stato HTTP 200-299)
     if (!response.ok) {
         // Handle non-ok responses
         if (response.status === 404) {
-            // Throw an error if the endpoint is not found
+            // Genera un errore se l'endpoint non viene trovato
             throw new Error('Endpoint not found');
         } else {
-            // Try to get the response body as text for further examination
-                return response.text();
+            return response.text();
         }
     }
-    // If the response is ok, parse it as JSON
+    //Se la risposta è ok, ritorna un JSON
     return response.json();
 })
 .catch(error => console.error(error));
