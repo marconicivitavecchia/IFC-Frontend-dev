@@ -6,8 +6,6 @@ const https = require('https');  // HTTPS module for making secure requests
 const mqttClient = require('./mqtt');  // Custom MQTT client module
 const { HttpsProxyAgent } = require('https-proxy-agent');
 
-const proxyOptions = 'https://spr80fpvep:0pgbIe02ysV68wJxkb@gate.smartproxy.com:7000'; // Your Proxy URL goes here
-
 // Create an Express application
 const app = express();
 const port = process.env.PORT || 5500; // Use the port defined by the environment variable, defaulting to 5500
